@@ -1,68 +1,68 @@
 # Two Brain
 
-## Descrição
+## Description
 
-API RESTful desenvolvida para gerenciar **notas, pensamentos e ideias**, seguindo o modelo **single-tenant**, onde cada usuário possui acesso apenas às suas próprias notas.
+A RESTful API developed to manage notes, thoughts, and ideas, following a single-tenant model, where each user has access only to their own notes.
 
-O projeto foi pensado com foco em **organização, segurança e boas práticas**, sendo criado para uso pessoal.
+This project was designed with a focus on organization, security, and best practices, and was created for personal use.
 
 ---
 
 ## 🚀 Stack
 
-- **FastAPI** — framework web moderno e performático
-- **SQLAlchemy 2.0** — ORM para modelagem e acesso ao banco de dados
-- **PostgreSQL** — banco de dados relacional
-- **pwdlib[argon]** — hashing seguro de senhas (Argon2)
-- **Alembic** — controle de migrations do banco de dados
+- **FastAPI** — modern and high-performance web framework
+- **SQLAlchemy 2.0** — ORM for database modeling and access
+- **PostgreSQL** — relational database
+- **pwdlib[argon]** — secure password hashing (Argon2)
+- **Alembic** — database migration management
 
 ---
 
 ## 🗂 Organização do Projeto
 
-O projeto segue uma estrutura simples e bem definida:
+The project follows a simple and well-defined structure:
 
 - **Database/**
-  Contém tudo relacionado ao banco de dados: models, sessão, engine e configurações.
+  Contains everything related to the database: models, sessions, engine, and configurations.
 
 - **routes/**
-  Define todas as rotas da API (endpoints), separadas por contexto.
+  Defines all API routes (endpoints), separated by context.
 
 - **security/**
-  Responsável pela parte de segurança da aplicação, incluindo:
-    - Geração e validação de tokens
-    - Hash e verificação de senhas
+  Responsible for application security, including:
+    - Token generation and validation
+    - Password hashing and verification
 
 ---
 
-## ▶️ Como Rodar o Projeto
+## ▶️ Running the project
 
-### 1️⃣ Pré-requisitos
+### 1️⃣ Prerequisites
 
 - **Python 3.10+**
-- **PostgreSQL** em execução
-- **uv** instalado (gerenciador de dependências)
+- **PostgreSQL** running
+- **uv** installed (dependency manager)
 
 ---
 
-### 2️⃣ Clonando o repositório
+### 2️⃣ Cloning the repository
 
 ```bash
-git clone <url-do-repositorio>
+git clone <repository-url>
 cd two-brain
 ```
 
 ---
 
-### 3️⃣ Configuração do ambiente
+### 3️⃣ Environment setup
 
-Crie um arquivo `.env` com base no `.env.example`:
+Create a `.env` file based on `.env.example`:
 
 ```bash
 cp .env.example .env
 ```
 
-Exemplo de variáveis de ambiente utilizadas:
+Example environment variables:
 
 ```env
 DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/twobrain
@@ -71,13 +71,13 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=60
 ```
 
-⚠️ Ajuste os valores conforme seu ambiente local.
+⚠️ Adjust the values according to your local environment.
 
 ---
 
-### 4️⃣ Instalando as dependências
+### 4️⃣ Installing dependencies
 
-As dependências do projeto são instaladas utilizando o **uv**:
+Project dependencies are installed using **uv**:
 
 ```bash
 uv sync
@@ -85,39 +85,39 @@ uv sync
 
 ---
 
-### 5️⃣ Migrations com Alembic
+### 5️⃣ Alembic migrations
 
-O projeto utiliza **Alembic** para versionamento do banco de dados.
+The project uses **Alembic** for database versioning.
 
-Criar as tabelas no banco:
+Create the database tables:
 
 ```bash
 alembic upgrade head
 ```
 
-Criar uma nova migration:
+Create a new migration:
 
 ```bash
-alembic revision --autogenerate -m "descrição da migration"
+alembic revision --autogenerate -m "migration description"
 ```
 
 ---
 
-### 6️⃣ Rodando a aplicação
+### 6️⃣ Running the application
 
-Para iniciar a API:
+To start the API:
 
 ```bash
 uv run serv
 ```
 
-A aplicação estará disponível em:
+The application will be available at:
 
 ```
 http://localhost:8000
 ```
 
-Documentação automática (Swagger):
+Automatic documentation (Swagger):
 
 ```
 http://localhost:8000/docs
@@ -125,20 +125,20 @@ http://localhost:8000/docs
 
 ---
 
-### 7️⃣ Ambiente de desenvolvimento (opcional)
+### 7️⃣ Development environment (optional)
 
-Para instalar dependências de desenvolvimento:
+To install development dependencies:
 
 ```bash
 uv sync --dev
 ```
 
-Inclui ferramentas como **pytest** e **ruff**.
+Includes tools such as **pytest** and **ruff**.
 
 ---
 
-## ⚙️ Em Desenvolvimento
+## ⚙️ In Development
 
-- [ ] Expansão dos testes
-- [ ] Documentação completa dos endpoints
+- [ ] Test expansion
+- [ ] Complete endpoint documentation
 - [ ] Frontend
