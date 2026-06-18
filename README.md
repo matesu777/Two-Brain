@@ -18,7 +18,7 @@ This project was designed with a focus on organization, security, and best pract
 
 ---
 
-## 🗂 Organização do Projeto
+## 🗂 Project Structure
 
 The project follows a simple and well-defined structure:
 
